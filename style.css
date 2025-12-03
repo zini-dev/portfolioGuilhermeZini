@@ -1,17 +1,11 @@
-/* --- Configurações Globais e Variáveis de Cor (Dark Theme) --- */
+
 :root {
     --cor-fundo: #111827;
-    /* Cinza bem escuro */
     --cor-superficie: #1F2937;
-    /* Cinza escuro para cards */
     --cor-primaria: #a78bfa;
-    /* Roxo claro vibrante */
     --cor-texto-principal: #f9fafb;
-    /* Branco suave */
     --cor-texto-secundario: #9ca3af;
-    /* Cinza claro para textos de apoio */
     --cor-borda: #374151;
-    /* Cinza para bordas */
 }
 
 * {
@@ -31,7 +25,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- Estrutura Principal --- */
 .container {
     max-width: 960px;
     margin-left: auto;
@@ -61,7 +54,6 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* --- Barra de Navegação --- */
 .navbar {
     background-color: rgba(31, 41, 55, 0.8);
     backdrop-filter: blur(10px);
@@ -103,7 +95,6 @@ section h2::after {
     color: var(--cor-primaria);
 }
 
-/* --- Seção Hero (Sobre) --- */
 .hero {
     background-color: var(--cor-fundo);
     padding: 80px 0;
@@ -162,7 +153,6 @@ section h2::after {
     border: 5px solid var(--cor-borda);
 }
 
-/* --- Seção de Projetos --- */
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -219,14 +209,12 @@ section h2::after {
     color: var(--cor-fundo);
 }
 
-/* --- Seções Duplas (Experiência e Habilidades) --- */
 .secoes-duplas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
-/* --- Experiência (Timeline) --- */
 .timeline-item {
     position: relative;
     padding-left: 30px;
@@ -255,7 +243,6 @@ section h2::after {
     margin: 0;
 }
 
-/* --- Habilidades --- */
 .habilidades-lista {
     list-style: none;
     display: flex;
@@ -272,7 +259,6 @@ section h2::after {
     border: 1px solid var(--cor-borda);
 }
 
-/* --- Contato e Footer --- */
 .contato-links {
     text-align: center;
     margin-top: 20px;
@@ -301,7 +287,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Responsividade --- */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column-reverse;
@@ -318,6 +303,42 @@ footer {
 
     .nav-links {
         display: none;
-        /* Simplificação para mobile, pode ser melhorado com JS */
     }
+
 }
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .navbar .container,
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                padding-left: 0;
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .hero-content {
+                gap: 2rem;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 1rem;
+            }
+
+            .projetos-grid,
+            .secoes-duplas {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+        }
