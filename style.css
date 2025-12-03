@@ -1,0 +1,323 @@
+/* --- Configurações Globais e Variáveis de Cor (Dark Theme) --- */
+:root {
+    --cor-fundo: #111827;
+    /* Cinza bem escuro */
+    --cor-superficie: #1F2937;
+    /* Cinza escuro para cards */
+    --cor-primaria: #a78bfa;
+    /* Roxo claro vibrante */
+    --cor-texto-principal: #f9fafb;
+    /* Branco suave */
+    --cor-texto-secundario: #9ca3af;
+    /* Cinza claro para textos de apoio */
+    --cor-borda: #374151;
+    /* Cinza para bordas */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+}
+
+/* --- Estrutura Principal --- */
+.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    color: var(--cor-texto-principal);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Barra de Navegação --- */
+.navbar {
+    background-color: rgba(31, 41, 55, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--cor-texto-principal);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- Seção Hero (Sobre) --- */
+.hero {
+    background-color: var(--cor-fundo);
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.intro-ola {
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+.hero-title {
+    color: var(--cor-texto-principal);
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    margin-bottom: 30px;
+}
+
+.btn-contato {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.btn-contato:hover {
+    opacity: 0.85;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--cor-borda);
+}
+
+/* --- Seção de Projetos --- */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.projeto-card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projeto-card h3 {
+    color: var(--cor-primaria);
+    margin: 20px 20px 10px;
+}
+
+.projeto-card p {
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+.projeto-links {
+    padding: 20px;
+}
+
+.btn-projeto {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--cor-primaria);
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-projeto:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+/* --- Seções Duplas (Experiência e Habilidades) --- */
+.secoes-duplas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* --- Experiência (Timeline) --- */
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-fundo);
+}
+
+.timeline-item h3 {
+    color: var(--cor-texto-principal);
+    margin: 0;
+}
+
+/* --- Habilidades --- */
+.habilidades-lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.habilidades-lista li {
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto-secundario);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--cor-borda);
+}
+
+/* --- Contato e Footer --- */
+.contato-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#contato p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#contato a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .secoes-duplas {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        /* Simplificação para mobile, pode ser melhorado com JS */
+    }
+}
